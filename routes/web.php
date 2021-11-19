@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'MicropostsController@index');
-
+Route::get('/', 'MicropostsController@index')->name('microposts.index');
+Route::resource('microposts', 'MicropostsController', ['except' => ['index']]);
 
 //ユーザー登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
